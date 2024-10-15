@@ -26,23 +26,23 @@
             <ul>
                 <li>
                     <i class="fa-solid fa-house"></i>
-                    <a href="#">Bảng điều khiển</a>
+                    <a href="http://127.0.0.1:5500/home_page.html#">Bảng điều khiển</a>
                 </li>
                 <li class="active">
                     <i class="fa-solid fa-book"></i>
-                    <a href="#">Quản lý khoá học</a>
+                    <a href="http://127.0.0.1:5500/course_page.html#">Quản lý khoá học</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-pen"></i>
-                    <a href="#">Quản lý lớp học</a>
+                    <a href="http://127.0.0.1:5500/class_page.html#">Quản lý lớp học</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-graduation-cap"></i>
-                    <a href="#">Quản lý sinh viên</a>
+                    <a href="http://127.0.0.1:5500/student_page.html#">Quản lý sinh viên</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-users"></i>
-                    <a href="#">Quản lý tài khoản</a>
+                    <a href="http://127.0.0.1:5500/account_page.html#">Quản lý tài khoản</a>
                 </li>
             </ul>
         </nav>
@@ -52,35 +52,34 @@
 
             <div class="modal">
                 <p>Thêm mới khoá học<span class="close">&times;</span></p>
-                <div class="modal-content">
-                    <form action="" class="add-form">
-                        <label for="course-id">Mã khoá học <span class="red-color">(*)</span>
-                            <input type="text" id="course-id" name="course-id" placeholder="Nhập mã khoá học" required>
+                <form class="add-form">
+                    <div>
+                        <label for="course-id">Mã khoá học<span class="red-color">(*)</span></label>
+                        <input type="text" id="course-id" name="course-id" placeholder="Nhập mã khoá học" required>
+                    </div>
+                    <div>
+                        <label for="course-name">Tên khoá học <span class="red-color">(*)</span></label>
+                        <input type="text" id="course-name" name="course-name" placeholder="Nhập tên khoá học" required>
+                    </div>
+                    <div>
+                        <label for="course-time">Thời gian<span class="red-color">(*)</span></label>
+                        <input type="number" id="course-time" name="course-time" placeholder="Nhập thời gian khoá học" required>
+                    </div>
+                    <div class="course-status">
+                        <div>Trạng thái</div>
+                        <label for="course-status-1">
+                            <input type="radio" id="course-status-1" name="course-status" value="1" checked>Hoạt
+                            động
                         </label>
-                        <label for="course-name">Mã khoá học <span class="red-color">(*)</span>
-                            <input type="text" id="course-name" name="course-name" placeholder="Nhập tên khoá học"
-                                required>
+                        <label for="course-status-0">
+                            <input type="radio" id="course-status-0" name="course-status" value="0">Không hoạt động
                         </label>
-                        <label for="course-name">Mã khoá học <span class="red-color">(*)</span>
-                            <input type="number" id="course-time" name="course-time"
-                                placeholder="Nhập thời gian khoá học" required>
-                        </label>
-                        <div class="course-status">
-                            <div>Trạng thái</div>
-                            <label for="course-status-1">
-                                <input type="radio" id="course-status-1" name="course-status" value="1" checked>Hoạt
-                                động
-                            </label>
-                            <label for="course-status-0">
-                                <input type="radio" id="course-status-0" name="course-status" value="0">Không hoạt động
-                            </label>
-                        </div>
-                        <div class="submit-btn">
-                            <button type="submit" class="button">Thêm mới</button>
-                            <button type="button" class="button">Đóng</button>
-                        </div>
-                    </form>
-                </div>
+                    </div>
+                    <div class="submit-btn">
+                        <button type="submit" class="button">Thêm mới</button>
+                        <button type="button" class="button">Đóng</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>

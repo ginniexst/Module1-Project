@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cập nhật khoá học</title>
-    <link rel="stylesheet" href="./styles/course_page_2.css">
+    <title>Trang quản trị lớp học</title>
+    <link rel="stylesheet" href="./styles/class_page.css">
     <script src="https://kit.fontawesome.com/7bac960b93.js" crossorigin="anonymous"></script>
 
 </head>
@@ -28,11 +28,11 @@
                     <i class="fa-solid fa-house"></i>
                     <a href="http://127.0.0.1:5500/home_page.html#">Bảng điều khiển</a>
                 </li>
-                <li class="active">
+                <li>
                     <i class="fa-solid fa-book"></i>
                     <a href="http://127.0.0.1:5500/course_page.html#">Quản lý khoá học</a>
                 </li>
-                <li>
+                <li class="active">
                     <i class="fa-solid fa-pen"></i>
                     <a href="http://127.0.0.1:5500/class_page.html#">Quản lý lớp học</a>
                 </li>
@@ -48,49 +48,114 @@
         </nav>
 
         <div class="main-content">
-            <h2 class="uppercase">Quản lý khoá học</h2>
+            <h2 class="uppercase">Quản lý lớp học</h2>
+            <div class="search-menu">
+                <button class="add-btn" id="addBtn">Thêm mới</button>
+                <div>
+                    <input type="text" class="search-bar" placeholder="Nhập lớp học tìm kiếm">
+                    <button class="search-btn">Tìm kiếm</button>
+                </div>
+                <label for="" class="sort">Sắp xếp
+                    <select name="" id="">
+                        <option value="">Lựa chọn</option>
+                        <option value="">Tăng dần</option>
+                        <option value="">Giảm dần</option>
+                    </select>
+                </label>
+            </div>
 
-            <div class="modal">
-                <p>Cập nhật khoá học<span class="close">&times;</span></p>
-                <form>
-                    <div class="edit-form">
-                        <label for="course-id">Mã khoá học <span class="red-color">(*)</span></label>
-                        <input type="text" id="course-id" name="course-id" required>
-                    </div>
-                    <div class="edit-form">
-                        <label for="course-name">Tên khoá học <span class="red-color">(*)</span></label>
-                        <input type="text" id="course-name" name="course-name" required>
-                    </div>
-                    <div class="edit-form">
-                        <label for="course-name">Thời gian <span class="red-color">(*)</span></label>
-                        <input type="number" id="course-time" name="course-time" required>
-                    </div>
+
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã lớp</th>
+                        <th>Tên lớp</th>
+                        <th>Giảng viên</th>
+                        <th>Mô tả</th>
+                        <th>Sĩ số</th>
+                        <th>Trạng thái</th>
+                        <th>Khoá học</th>
+                        <th colspan="2">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>C001</td>
+                        <td>HN-JV230508</td>
+                        <td>1000</td>
+                        <td>QuangND</td>
+                        <td>Java fullstack</td>
+                        <td>20</td>
+                        <td>Chờ lớp</td>
+                        <td>Khoá học 1</td>
+                        <td>
+                            <span class="button button-edit">Sửa</span>
+                        </td>
+                        <td>
+                            <span class="button button-delete">Xoá</span>
+                        </td>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <a href="#">Prev</a>
+                <a href="#" class="pag-active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">Next</a>
+            </div>
+        </div>
+
+        <!-- Thêm mới lớp học
+        <div class="add-modal">
+            <p>Thêm mới lớp học<span class="close">&times;</span></p>
+            <div class="modal-content">
+                <form action="" class="add-form">
+                    <label for="class-id">Mã lớp học<span class="red-color">(*)</span>
+                        <input type="text" id="class-id" name="class-id" placeholder="Nhập vào mã lớp học" required>
+                    </label>
+                    <label for="class-name">Tên lớp học <span class="red-color">(*)</span>
+                        <input type="text" id="class-name" name="class-name" placeholder="Nhập vào tên lớp học"
+                            required>
+                    </label>
+                    <label for="class-teacher">Thời gian<span class="red-color">(*)</span>
+                        <input type="text" id="class-teacher" name="class-teacher" placeholder="Nhập vào giảng viên dạy lớp"
+                            required>
+                    </label>
+                    <label for="class-number">Thời gian<span class="red-color">(*)</span>
+                        <input type="number" id="class-number" name="class-number" placeholder="Nhập vào sĩ sổ lớp"
+                            required>
+                    </label>
+                    <label for="class-description">Mô tả
+                        <textarea name="class-description" id="class-description"></textarea>
+                    </label>
                     <div class="course-status">
                         <div>Trạng thái</div>
-                        <div>
-                            <input type="radio" id="course-status-1" name="course-status" value="1" checked>
-                            <label for="course-status-1">Hoạt động</label>
-                        </div>
-                        <div>
-                            <input type="radio" id="course-status-0" name="course-status" value="0">
-                            <label for="course-status-0">Không hoạt động</label>
-                        </div>
+                        <label for="course-status-1">
+                            <input type="radio" id="course-status-1" name="course-status" value="1" checked>Hoạt
+                            động
+                        </label>
+                        <label for="course-status-0">
+                            <input type="radio" id="course-status-0" name="course-status" value="0">Không hoạt động
+                        </label>
                     </div>
                     <div class="submit-btn">
-                        <button type="submit" class="button">Cập nhật</button>
+                        <button type="submit" class="button">Thêm mới</button>
                         <button type="button" class="button">Đóng</button>
                     </div>
                 </form>
             </div>
-        </div>
-    </div>
+        </div> -->
     </div>
 
     <footer>
         <div>Copyright Rikkei Academy @2023</div>
     </footer>
 
-
+    <script src="./apps/class_page.js"></script>
 </body>
 
 </html>
