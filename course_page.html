@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ quản trị</title>
-    <link rel="stylesheet" href="./styles/home_page.css">
+    <title>Trang quản trị khoá học</title>
+    <link rel="stylesheet" href="./styles/course_page.css">
     <script src="https://kit.fontawesome.com/7bac960b93.js" crossorigin="anonymous"></script>
 
 </head>
@@ -17,18 +17,18 @@
                 alt="rikkei-logo" class="main-logo" />
             <p class="slogan">Để nông dân biết code</p>
         </div>
-        <h1>Hệ thống quản lý sinh viên Rikkei</h1>
+        <h1 class="uppercase">Hệ thống quản lý sinh viên Rikkei</h1>
         <button id="logOutBtn">Đăng xuất</button>
     </header>
 
     <div class="container">
         <nav class="navbar">
             <ul>
-                <li class="active">
+                <li>
                     <i class="fa-solid fa-house"></i>
                     <a href="#">Bảng điều khiển</a>
                 </li>
-                <li>
+                <li class="active">
                     <i class="fa-solid fa-book"></i>
                     <a href="#">Quản lý khoá học</a>
                 </li>
@@ -48,42 +48,58 @@
         </nav>
 
         <div class="main-content">
-            <section>
-                <div class="title">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <p>Thống kê khoá học</p>
+            <h2 class="uppercase">Quản lý khoá học</h2>
+            <div class="search-menu">
+                <button class="add-btn">Thêm mới</button>
+                <div>
+                    <input type="text" class="search-bar" placeholder="Nhập khoá học cần tìm kiếm">
+                    <button class="search-btn">Tìm kiếm</button>
                 </div>
-                <div class="statics-content">
-                    <p>Số khoá học: <span>5</span></p>
-                </div>
+                <label for="" class="sort">Sắp xếp
+                    <select name="" id="">
+                        <option value="">Lựa chọn</option>
+                        <option value="">Tăng dần</option>
+                        <option value="">Giảm dần</option>
+                    </select>
+                </label>
+            </div>
 
-            </section>
-            <section>
-                <div class="title">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <p>Thống kê lớp học</p>
-                </div>
-                <div class="statics-content">
-                    <p>Số lớp học: <span>20</span></p>
-                    <p>Số lớp đang hoạt động: <span>10</span></p>
-                    <p>Số lớp đã kết thúc: <span>4</span></p>
-                    <p>Số lớp đang chờ: <span>6</span></p>
-                </div>
 
-            </section>
-            <section>
-                <div class="title">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <p>Thống kê sinh viên</p>
-                </div>
-                <div class="statics-content">
-                    <p>Tổng số SV: <span>1000</span></p>
-                    <p>Số SV chờ lớp: <span>200</span></p>
-                    <p>Số SV đang học: <span>600</span></p>
-                    <p>Số SV bảo lưu/đình chỉ: <span>50</span></p>
-                    <p>Số SV tốt nghiệp: <span>150</span></p>
-                </div>
-            </section>
+            <table class="course-table">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Mã khoá học</th>
+                        <th>Tên khoá học</th>
+                        <th>Thời gian (chờ)</th>
+                        <th>Trạng thái</th>
+                        <th colspan="2">Hành động</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>RA01</td>
+                        <td>Khoá học 1</td>
+                        <td>1000</td>
+                        <td>Hoạt động</td>
+                        <td>
+                            <span class="button button-edit">Sửa</span>
+                        </td>
+                        <td>
+                            <span class="button button-delete">Xoá</span>
+                        </td>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <a href="#">Prev</a>
+                <a href="#" class="pag-active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">Next</a>
+            </div>
         </div>
     </div>
 

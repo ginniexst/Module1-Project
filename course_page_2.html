@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang chủ quản trị</title>
-    <link rel="stylesheet" href="./styles/home_page.css">
+    <title>Cập nhật khoá học</title>
+    <link rel="stylesheet" href="./styles/course_page_2.css">
     <script src="https://kit.fontawesome.com/7bac960b93.js" crossorigin="anonymous"></script>
 
 </head>
@@ -17,18 +17,18 @@
                 alt="rikkei-logo" class="main-logo" />
             <p class="slogan">Để nông dân biết code</p>
         </div>
-        <h1>Hệ thống quản lý sinh viên Rikkei</h1>
+        <h1 class="uppercase">Hệ thống quản lý sinh viên Rikkei</h1>
         <button id="logOutBtn">Đăng xuất</button>
     </header>
 
     <div class="container">
         <nav class="navbar">
             <ul>
-                <li class="active">
+                <li>
                     <i class="fa-solid fa-house"></i>
                     <a href="#">Bảng điều khiển</a>
                 </li>
-                <li>
+                <li class="active">
                     <i class="fa-solid fa-book"></i>
                     <a href="#">Quản lý khoá học</a>
                 </li>
@@ -48,42 +48,38 @@
         </nav>
 
         <div class="main-content">
-            <section>
-                <div class="title">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <p>Thống kê khoá học</p>
-                </div>
-                <div class="statics-content">
-                    <p>Số khoá học: <span>5</span></p>
-                </div>
+            <h2 class="uppercase">Quản lý khoá học</h2>
 
-            </section>
-            <section>
-                <div class="title">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <p>Thống kê lớp học</p>
+            <div class="modal">
+                <p>Cập nhật khoá học<span class="close">&times;</span></p>
+                <div class="modal-content">
+                    <form action="" class="add-form">
+                        <label for="course-id">Mã khoá học <span class="red-color">(*)</span>
+                            <input type="text" id="course-id" name="course-id" required>
+                        </label>
+                        <label for="course-name">Mã khoá học <span class="red-color">(*)</span>
+                            <input type="text" id="course-name" name="course-name" required>
+                        </label>
+                        <label for="course-name">Mã khoá học <span class="red-color">(*)</span>
+                            <input type="number" id="course-time" name="course-time" required>
+                        </label>
+                        <div class="course-status">
+                            <div>Trạng thái</div>
+                            <label for="course-status-1">
+                                <input type="radio" id="course-status-1" name="course-status" value="1" checked>Hoạt
+                                động
+                            </label>
+                            <label for="course-status-0">
+                                <input type="radio" id="course-status-0" name="course-status" value="0">Không hoạt động
+                            </label>
+                        </div>
+                        <div class="submit-btn">
+                            <button type="submit" class="button">Cập nhật</button>
+                            <button type="button" class="button">Đóng</button>
+                        </div>
+                    </form>
                 </div>
-                <div class="statics-content">
-                    <p>Số lớp học: <span>20</span></p>
-                    <p>Số lớp đang hoạt động: <span>10</span></p>
-                    <p>Số lớp đã kết thúc: <span>4</span></p>
-                    <p>Số lớp đang chờ: <span>6</span></p>
-                </div>
-
-            </section>
-            <section>
-                <div class="title">
-                    <i class="fa-solid fa-chart-simple"></i>
-                    <p>Thống kê sinh viên</p>
-                </div>
-                <div class="statics-content">
-                    <p>Tổng số SV: <span>1000</span></p>
-                    <p>Số SV chờ lớp: <span>200</span></p>
-                    <p>Số SV đang học: <span>600</span></p>
-                    <p>Số SV bảo lưu/đình chỉ: <span>50</span></p>
-                    <p>Số SV tốt nghiệp: <span>150</span></p>
-                </div>
-            </section>
+            </div>
         </div>
     </div>
 
