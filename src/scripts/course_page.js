@@ -1,8 +1,8 @@
 // Đăng xuất
 let logoutBtn = document.getElementById("logOutBtn");
 
-logoutBtn.onclick = function () {
-    location.href = "http://127.0.0.1:5500/logout_page.html";
+closeBtn.onclick = function() {
+    location.href = "http://127.0.0.1:5500/home_page.html";
 };
 
 // Render thông tin

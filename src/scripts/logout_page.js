@@ -1,25 +1,18 @@
 // Lấy nút đăng nhập
-let loginBtn = document.getElementById("loginBtn");
-let accountList = JSON.parse(localStorage.getItem("accountList"));
+let closeBtn = document.getElementById("closeBtn");
+let yesBtn = document.getElementById("yesBtn");
+let noBtn = document.getElementById("noBtn");
 
-loginBtn.onclick = function() {
-    // Lấy email và pw nhập vào
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPw").value;
+closeBtn.onclick = function() {
+    location.href = "http://127.0.0.1:5500/home_page.html";
+};
 
-    // Tìm tài khoản xem có tồn tại hay không
-    let find = accList.find(function(element, index) {
-        return element.email === email;
-    });    
+yesBtn.onclick = function() {
+    alert("Đăng xuất thành công");
+    localStorage.removeItem("loginInfo")
+    location.href = "http://127.0.0.1:5500/login_page.html";
+}
 
-    if (!find) {
-        alert(`Không có tài khoản với email: ${email} trong hệ thống`)
-    } else {
-        if (find.pw !== password) {
-            alert("Mật khẩu không đúng");
-        } else {
-            alert("Đăng nhập thành công");
-            location.href = "http://127.0.0.1:5500/home_page.html"
-        }
-    };
+noBtn.onclick = function() {
+    location.href = "http://127.0.0.1:5500/home_page.html";
 }

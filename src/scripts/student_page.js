@@ -34,3 +34,5 @@ function render() {
         tbody.innerHTML += html;
     }
 };
+
+render();
