@@ -3,5 +3,5 @@
 let logoutBtn = document.getElementById("logOutBtn");
 
 logoutBtn.onclick = function() {
-    location.href = "http://127.0.0.1:5500/login_page.html#";
+    location.href = "http://127.0.0.1:5500/logout_page.html#";
 };
