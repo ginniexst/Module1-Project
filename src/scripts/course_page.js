@@ -3,9 +3,12 @@ let logoutBtn = document.getElementById("logOutBtn");
 let courseList = JSON.parse(localStorage.getItem("courseList"));
 let tbody = document.getElementById("tbody");
 let addBtn = document.getElementById("addBtn");
-let addForm = document.getElementById("addForm");
+let addFormDiv = document.getElementById("addFormDiv");
 let span = document.getElementsByClassName("close")[0];
 let closeBtn = document.getElementById("closeBtn");
+
+console.log(addBtn);
+
 
 
 logoutBtn.onclick = function () {
@@ -45,20 +48,17 @@ function render() {
 render();
 
 addBtn.onclick = function() {
-    addForm.style.display = "block";
+    addFormDiv.style.display = "block";
 }
 
 span.onclick = function() {
-    addForm.style.display = "none";
+    addFormDiv.style.display = "none";
 }
 
 closeBtn.onclick = function() {
-    addForm.style.display = "none";
+    addFormDiv.style.display = "none";
 }
 
-addBtn.onclick = function() {
-
-}
 // Sắp xếp tăng dần
 // let ascending = document.getElementById("sortAscending");
 // ascending.onclick = function () {
