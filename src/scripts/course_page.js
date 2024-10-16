@@ -1,8 +1,8 @@
 // Đăng xuất
 let logoutBtn = document.getElementById("logOutBtn");
 
-closeBtn.onclick = function() {
-    location.href = "http://127.0.0.1:5500/home_page.html";
+logoutBtn.onclick = function () {
+    location.href = "http://127.0.0.1:5500/logout_page.html";
 };
 
 // Render thông tin
@@ -38,3 +38,34 @@ function render() {
 };
 
 render();
+
+// Sắp xếp tăng dần
+// let ascending = document.getElementById("sortAscending");
+// ascending.onclick = function () {
+//     let sortAscending = courseList.slice(0);
+//     sortAscending.sort(function (a, b) {
+//         let x = a.code.toLowerCase();
+//         let y = b.code.toLowerCase();
+//         return x < y ? -1 : x > y ? 1 : 0;
+//     });
+//     localStorage.setItem(JSON.stringify("courseList", sortAscending));
+//     render();
+// };
+
+
+// Sắp xếp giảm dần
+// let descending = document.getElementById("sortDescending");
+// descending.onclick = function () {
+//     let sortDescending = courseList.slice(0);
+//     sortDescending.sort(function (a, b) {
+//         let x = a.code.toLowerCase();
+//         let y = b.code.toLowerCase();
+//         return x > y ? -1 : x < y ? 1 : 0;
+//     });
+//     console.log(sortDescending);
+    
+//     localStorage.setItem("courseList", JSON.stringify(sortDescending));
+//     render();
+// }
+
+
