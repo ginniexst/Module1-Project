@@ -61,7 +61,7 @@
         <div class="main-table">
           <h2 class="uppercase">Quản lý khoá học</h2>
           <div class="search-menu">
-            <button class="add-btn">Thêm mới</button>
+            <button class="add-btn" id="addBtn">Thêm mới</button>
             <div>
               <input
                 type="text"
@@ -104,9 +104,78 @@
           </div>
         </div>
 
-        <div class="modal overlay">
+        <!-- Form thêm mới khóa học -->
+        <div class="modal overlay" id="addForm">
           <div class="modal-content">
-            <p>Thêm mới khoá học<span class="close">&times;</span></p>
+            <p class="bold">Thêm mới khoá học<span class="close">&times;</span></p>
+            <form id="addForm">
+              <div class="add-form">
+                <label for="course-id"
+                  >Mã khoá học<span class="red-color">(*)</span></label
+                >
+                <input
+                  type="text"
+                  name="course-id"
+                  placeholder="Nhập mã khoá học"
+                  required
+                />
+              </div>
+              <div class="add-form">
+                <label for="course-name"
+                  >Tên khoá học <span class="red-color">(*)</span></label
+                >
+                <input
+                  type="text"
+                  name="course-name"
+                  placeholder="Nhập tên khoá học"
+                  required
+                />
+              </div>
+              <div class="add-form">
+                <label for="course-time"
+                  >Thời gian<span class="red-color">(*)</span></label
+                >
+                <input
+                  type="number"
+                  name="course-time"
+                  placeholder="Nhập thời gian khoá học"
+                  required
+                />
+              </div>
+              <div class="course-status">
+                <div>Trạng thái</div>
+                <div>
+                  <input
+                    type="radio"
+                    id="course-status-1"
+                    name="course-status"
+                    value="1"
+                    checked
+                  />
+                  <label for="course-status-1">Hoạt động</label>
+                </div>
+                <div>
+                  <input
+                    type="radio"
+                    id="course-status-1"
+                    name="course-status"
+                    value="0"
+                  />
+                  <label for="course-status-1">Không hoạt động</label>
+                </div>
+              </div>
+              <div class="submit-btn">
+                <button type="button" class="button" id="addBtn">Thêm mới</button>
+                <button type="button" class="button" id="closeBtn">Đóng</button>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Form sửa khóa học -->
+        <!-- <div class="modal overlay">
+          <div class="modal-content">
+            <p  class="bold">Cập nhật khoá học<span class="close">&times;</span></p>
             <form>
               <div class="add-form">
                 <label for="course-id"
@@ -152,7 +221,6 @@
                     id="course-status-1"
                     name="course-status"
                     value="1"
-                    checked
                   />
                   <label for="course-status-1">Hoạt động</label>
                 </div>
@@ -167,12 +235,24 @@
                 </div>
               </div>
               <div class="submit-btn">
-                <button class="button" id="addBtn">Thêm mới</button>
+                <button class="button" id="addBtn">Cập nhật</button>
                 <button class="button" id="closeBtn">Đóng</button>
               </div>
             </form>
           </div>
-        </div>
+        </div> -->
+
+        <!-- Form xác nhận xóa -->
+        <!-- <div class="modal overlay">
+          <div class="modal-content">
+            <p class="bold">Xác nhận xóa khóa học<span class="close">&times;</span></p>
+            <p>Bạn chắc chắn muốn xóa khóa học 1?</p>
+            <div class="submit-btn">
+              <button class="button" id="yesBtn">Có</button>
+              <button class="button" id="noBtn">Không</button>
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
 
