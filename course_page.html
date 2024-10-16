@@ -110,34 +110,34 @@
             <p class="bold">Thêm mới khoá học<span class="close">&times;</span></p>
             <form id="addForm">
               <div class="add-form">
-                <label for="course-id"
+                <label for="courseId"
                   >Mã khoá học<span class="red-color">(*)</span></label
                 >
                 <input
                   type="text"
-                  name="course-id"
+                  name="courseId"
                   placeholder="Nhập mã khoá học"
                   required
                 />
               </div>
               <div class="add-form">
-                <label for="course-name"
+                <label for="courseName"
                   >Tên khoá học <span class="red-color">(*)</span></label
                 >
                 <input
                   type="text"
-                  name="course-name"
+                  name="courseName"
                   placeholder="Nhập tên khoá học"
                   required
                 />
               </div>
               <div class="add-form">
-                <label for="course-time"
+                <label for="courseTime"
                   >Thời gian<span class="red-color">(*)</span></label
                 >
                 <input
                   type="number"
-                  name="course-time"
+                  name="courseTime"
                   placeholder="Nhập thời gian khoá học"
                   required
                 />
@@ -148,7 +148,7 @@
                   <input
                     type="radio"
                     id="course-status-1"
-                    name="course-status"
+                    name="courseStatus"
                     value="1"
                     checked
                   />
@@ -157,16 +157,16 @@
                 <div>
                   <input
                     type="radio"
-                    id="course-status-1"
-                    name="course-status"
+                    id="course-status-0"
+                    name="courseStatus"
                     value="0"
                   />
-                  <label for="course-status-1">Không hoạt động</label>
+                  <label for="course-status-0">Không hoạt động</label>
                 </div>
               </div>
               <div class="submit-btn">
-                <button type="button" class="button" id="addBtn">Thêm mới</button>
-                <button type="button" class="button" id="closeBtn">Đóng</button>
+                <button type="submit" class="button" id="addCourse">Thêm mới</button>
+                <button type="button" class="button" id="closeCourse">Đóng</button>
               </div>
             </form>
           </div>

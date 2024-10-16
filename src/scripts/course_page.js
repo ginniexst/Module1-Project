@@ -5,10 +5,9 @@ let tbody = document.getElementById("tbody");
 let addBtn = document.getElementById("addBtn");
 let addFormDiv = document.getElementById("addFormDiv");
 let span = document.getElementsByClassName("close")[0];
-let closeBtn = document.getElementById("closeBtn");
-
-console.log(addBtn);
-
+let closeCourse = document.getElementById("closeCourse");
+let addCourse = document.getElementById("addCourse");
+let addForm = document.getElementById("addForm");
 
 
 logoutBtn.onclick = function () {
@@ -49,15 +48,19 @@ render();
 
 addBtn.onclick = function() {
     addFormDiv.style.display = "block";
-}
+};
 
 span.onclick = function() {
     addFormDiv.style.display = "none";
-}
+};
 
-closeBtn.onclick = function() {
+closeCourse.onclick = function() {
     addFormDiv.style.display = "none";
-}
+};
+
+addForm.onsubmit = function(event) {
+    event.preventDefault();
+};
 
 // Sắp xếp tăng dần
 // let ascending = document.getElementById("sortAscending");
