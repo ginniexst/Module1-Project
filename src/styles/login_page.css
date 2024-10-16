@@ -1,0 +1,42 @@
+body {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.login-form p {
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.login-form {
+    border: 1px solid rgb(187, 207, 225);
+    width: 800px;
+    margin: 100px auto;
+    padding: 20px 60px 20px 30px;
+    background-color: aliceblue;
+    border-radius: 4px;
+}
+
+.mb-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.mb-3 label {
+    width: 20%;
+}
+
+.mb-3 input {
+    width: 80%;
+}
+
+button {
+    margin-left: 50%;
+    background-color: rgb(179, 211, 239) !important;
+    border: none;
+}
+
+button:hover {
+    background-color: rgb(125, 125, 248) !important;
+}
