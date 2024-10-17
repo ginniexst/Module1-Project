@@ -104,3 +104,27 @@ span.onclick = function () {
 closeCourse.onclick = function () {
     addFormDiv.style.display = "none";
 };
+
+// Đóng modal cập nhật lớp học
+let editFromDiv = document.getElementById("editFormDiv");
+let editSpan = document.getElementById("editSpan");
+let closeEdit = document.getElementById("closeEdit");
+
+closeEdit.onclick = function() {
+    editFormDiv.style.display = "none";
+};
+editSpan.onclick = function() {
+    editFormDiv.style.display = "none";
+}
+
+// Đóng modal xác nhận xóa
+let delFormDiv = document.getElementById("delFormDiv");
+let delSpan = document.getElementById("delSpan");
+let noBtn = document.getElementById("noBtn");
+
+delSpan.onclick = function() {
+    delFormDiv.style.display = "none";
+};
+noBtn.onclick = function() {
+    delFormDiv.style.display = "none";
+};

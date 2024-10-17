@@ -130,4 +130,4 @@ delSpan.onclick = function() {
 };
 noBtn.onclick = function() {
     delFormDiv.style.display = "none";
-}
+};
