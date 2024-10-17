@@ -12,6 +12,8 @@ loginBtn.onclick = function () {
     let find = accountList.find(function (element, index) {
         return element.email === email;
     });
+    console.log(find);
+    
 
     if (!find) {
         alert(`Không có tài khoản với email: ${email} trong hệ thống`)
