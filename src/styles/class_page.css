@@ -115,11 +115,11 @@ footer {
 }
 
 .button {
-    padding: 4px 12px;
-    line-height: 30px;
+    padding: 3px 8px;
     border-radius: 4px;
     color: #000;
     cursor: pointer;
+    border: 1px solid #888;
 }
 
 .button-edit {
@@ -136,13 +136,17 @@ footer {
     font-size: 24px;
 }
 
-.course-table, .course-table tr, .course-table th, .course-table td  {
+.class-table,
+.class-table tr,
+.class-table th,
+.class-table td {
     border: 1px solid black;
     border-collapse: collapse;
     padding: 3px;
 }
 
-.add-btn, .search-btn {
+.add-btn,
+.search-btn {
     font-size: 14px;
     padding: 3px;
     width: 100px;
@@ -166,6 +170,99 @@ footer {
     justify-content: space-between;
 }
 
-.course-table {
+.class-table {
     width: 100%;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 25px auto;
+    width: 80%;
+}
+
+.modal p {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.close {
+    border: 1px solid #888;
+    width: 50px;
+    text-align: center;
+    background-color: #e9e4e4;
+}
+
+.close:hover {
+    background-color: #888;
+    cursor: pointer;
+}
+
+.add-form label,
+.add-form input {
+    display: inline-block;
+}
+
+.add-form > label {
+    width: 25%;
+}
+
+.add-form input {
+    font-size: 16px;
+    margin-top: 20px;
+    width: 70%;
+    text-align: left;
+}
+
+.add-form textarea {
+    font-size: 16px;
+    margin-top: 20px;
+    width: 70%;
+    text-align: left;
+}
+
+.class-status {
+    display: flex;
+    margin-top: 20px;
+    align-self: center;
+}
+
+.class-status div {
+    width: 25%;
+}
+
+.submit-btn {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.red-color {
+    color: red;
+}
+
+.overlay {
+    position: fixed;
+    top: 22%;
+    left: 30%;
+    z-index: 1;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    height: 63%;
+    border: 1px solid #888;
+    display: none;
+}
+
+#classStatus {
+    width: 70%;
+    text-align: left;
+    font-size: 16px;
 }

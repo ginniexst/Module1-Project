@@ -89,9 +89,6 @@ function render() {
     };
 
     // Xoá khoá học
-    delCourse.onclick = function() {
-        
-    }
 };
 
 render();

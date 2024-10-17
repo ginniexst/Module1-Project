@@ -59,7 +59,7 @@ header button {
   width: 70%;
 }
 
-nav > ul {
+nav>ul {
   display: flex;
   flex-direction: column;
   list-style-type: none;
@@ -74,11 +74,11 @@ li:hover:not(.active) {
   background-color: rgb(54, 161, 161);
 }
 
-li > p {
+li>p {
   display: inline-block;
 }
 
-li > a {
+li>a {
   text-decoration: none;
   margin-left: 5px;
 }
@@ -198,23 +198,24 @@ footer {
 }
 
 .close:hover {
-    background-color: #888;
-    cursor: pointer;
+  background-color: #888;
+  cursor: pointer;
 }
 
-.add-form label, .add-form input {
+.add-form label,
+.add-form input {
   display: inline-block;
 }
 
 .add-form label {
-    width: 25%;
+  width: 25%;
 }
 
 .add-form input {
-    font-size: 16px;
-    margin-top: 20px;
-    width: 70%;
-    text-align: left;
+  font-size: 16px;
+  margin-top: 20px;
+  width: 70%;
+  text-align: left;
 }
 
 .course-status {
@@ -237,15 +238,15 @@ footer {
 }
 
 .overlay {
-    position: fixed;
-    top: 22%;
-    left: 30%;
-    z-index: 1;
-    background-color: white;
-    display: flex;
-    align-items: center;
-    width: 60%;
-    height: 63%;
-    border: 1px solid #888;
-    display: none;
+  position: fixed;
+  top: 22%;
+  left: 30%;
+  z-index: 1;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 63%;
+  border: 1px solid #888;
+  display: none;
 }

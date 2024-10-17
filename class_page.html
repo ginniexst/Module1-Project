@@ -65,7 +65,7 @@
             </div>
 
 
-            <table class="course-table">
+            <table class="class-table">
                 <thead>
                     <tr>
                         <th>STT</th>
@@ -80,7 +80,7 @@
                     </tr>
                 </thead>
                 <tbody id="tbody">
-                    
+
                 </tbody>
             </table>
 
@@ -94,46 +94,49 @@
             </div>
         </div>
 
-        <!-- Thêm mới lớp học
-        <div class="add-modal">
-            <p>Thêm mới lớp học<span class="close">&times;</span></p>
+        <!-- Thêm mới lớp học -->
+        <div class="modal overlay" id="addFormDiv">
             <div class="modal-content">
-                <form action="" class="add-form">
-                    <label for="class-id">Mã lớp học<span class="red-color">(*)</span>
+            <p class="bold">Thêm mới lớp học<span class="close">&times;</span></p>
+                <form class="add-form">
+                    <div class="add-form">
+                        <label for="class-id">Mã lớp học<span class="red-color">(*)</span></label>
                         <input type="text" id="class-id" name="class-id" placeholder="Nhập vào mã lớp học" required>
-                    </label>
-                    <label for="class-name">Tên lớp học <span class="red-color">(*)</span>
-                        <input type="text" id="class-name" name="class-name" placeholder="Nhập vào tên lớp học"
-                            required>
-                    </label>
-                    <label for="class-teacher">Thời gian<span class="red-color">(*)</span>
-                        <input type="text" id="class-teacher" name="class-teacher" placeholder="Nhập vào giảng viên dạy lớp"
-                            required>
-                    </label>
-                    <label for="class-number">Thời gian<span class="red-color">(*)</span>
-                        <input type="number" id="class-number" name="class-number" placeholder="Nhập vào sĩ sổ lớp"
-                            required>
-                    </label>
-                    <label for="class-description">Mô tả
-                        <textarea name="class-description" id="class-description"></textarea>
-                    </label>
-                    <div class="course-status">
+                    </div>
+                    <div class="add-form">
+                        <label for="class-name">Tên lớp học <span class="red-color">(*)</span></label>
+                        <input type="text" id="class-name" name="class-name" placeholder="Nhập vào tên lớp học" required>
+                    </div>
+                    <div class="add-form">
+                        <label for="class-teacher">Thời gian<span class="red-color">(*)</span></label>
+                        <input type="text" id="class-teacher" name="class-teacher" placeholder="Nhập vào giảng viên dạy lớp" required>
+                    </div>
+                    <div class="add-form">
+                        <label for="class-number">Thời gian<span class="red-color">(*)</span></label>
+                        <input type="number" id="class-number" name="class-number" placeholder="Nhập vào sĩ số lớp" required>
+                    </div>
+                    <div class="add-form">
+                        <label for="class-description">Mô tả</label>
+                        <textarea name="class-description" id="class-description" ows="3"></textarea>
+                    </div>
+                    <div class="class-status">
                         <div>Trạng thái</div>
-                        <label for="course-status-1">
-                            <input type="radio" id="course-status-1" name="course-status" value="1" checked>Hoạt
-                            động
-                        </label>
-                        <label for="course-status-0">
-                            <input type="radio" id="course-status-0" name="course-status" value="0">Không hoạt động
-                        </label>
+                        <select name="class-status" id="classStatus">
+                            <option value="0">Chọn trạng thái lớp</option>
+                            <option value="1">Chờ lớp</option>
+                            <option value="2">Hoạt động</option>
+                            <option value="3">Kết thúc</option>
+                        </select>
                     </div>
+
                     <div class="submit-btn">
-                        <button type="submit" class="button">Thêm mới</button>
-                        <button type="button" class="button">Đóng</button>
+                        <button type="submit" class="button" id="addClass">Thêm mới</button>
+                        <button type="button" class="button" id="closeClass">Đóng</button>
                     </div>
+
                 </form>
             </div>
-        </div> -->
+        </div>
     </div>
 
     <footer>
