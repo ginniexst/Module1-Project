@@ -115,11 +115,11 @@ footer {
 }
 
 .button {
-  padding: 4px 12px;
-  line-height: 30px;
+  padding: 3px 8px;
   border-radius: 4px;
   color: #000;
   cursor: pointer;
+  border: 1px solid #888;
 }
 
 .button-edit {
@@ -136,10 +136,10 @@ footer {
   font-size: 24px;
 }
 
-.course-table,
-.course-table tr,
-.course-table th,
-.course-table td {
+.student-table,
+.student-table tr,
+.student-table th,
+.student-table td {
   border: 1px solid black;
   border-collapse: collapse;
   padding: 3px;
@@ -170,6 +170,83 @@ footer {
   justify-content: space-between;
 }
 
-.course-table {
+.student-table {
   width: 100%;
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 10% auto;
+  width: 80%;
+}
+
+.modal p {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.close {
+  border: 1px solid #888;
+  width: 50px;
+  text-align: center;
+  background-color: #e9e4e4;
+}
+
+.close:hover {
+  background-color: #888;
+  cursor: pointer;
+}
+
+.add-form label,
+.add-form input {
+  display: inline-block;
+}
+
+.add-form label {
+  width: 25%;
+}
+
+.add-form input {
+  font-size: 16px;
+  margin-top: 20px;
+  width: 70%;
+  text-align: left;
+}
+
+.gender {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+  align-self: center;
+}
+
+.submit-btn {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.red-color {
+  color: red;
+}
+
+.overlay {
+  position: fixed;
+  top: 22%;
+  left: 30%;
+  z-index: 1;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  height: 73%;
+  border: 1px solid #888;
+  display: none;
 }
