@@ -97,12 +97,9 @@
         </table>
 
         <div class="pagination">
-          <a href="#">Prev</a>
-          <a href="#" class="pag-active">1</a>
-          <a href="#">2</a>
-          <a href="#">3</a>
-          <a href="#">4</a>
-          <a href="#">Next</a>
+          <button id="prev">Prev</button>
+          <div id="page-info"></div>
+          <button id="next">Next</button>
         </div>
       </div>
 
@@ -204,7 +201,6 @@
                 type="text"
                 id="editName"
                 name="class-name"
-                placeholder="Nhập vào tên lớp học"
                 required
               />
             </div>
@@ -216,7 +212,6 @@
                 type="text"
                 id="editTeacher"
                 name="class-teacher"
-                placeholder="Nhập vào giảng viên dạy lớp"
                 required
               />
             </div>
@@ -228,7 +223,6 @@
                 type="number"
                 id="editNumber"
                 name="class-number"
-                placeholder="Nhập vào sĩ số lớp"
                 required
               />
             </div>

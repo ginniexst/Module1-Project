@@ -9,8 +9,20 @@ logoutBtn.onclick = function () {
 let accountList = JSON.parse(localStorage.getItem("accountList"));
 let tbody = document.getElementById("tbody");
 
+// Hiển thị 10 khoá trên 1 trang
+let pageInfo = document.getElementById("page-info");
+let prevButton = document.getElementById("prev");
+let nextButton = document.getElementById("next");
+let itemsPerPage = 10;
+let currentPage = 1;
+
 function render() {
-    for (let account of accountList) {
+    tbody.innerHTML = "";
+    let startIndex = (currentPage - 1) * itemsPerPage;
+    let endIndex = startIndex + itemsPerPage;
+    let pageData = accountList.slice(startIndex, endIndex);
+    
+    for (let account of pageData) {
         let html = "";
         let status = "";
         if (account.status) {
@@ -34,7 +46,39 @@ function render() {
             </tr>
         `;
         tbody.innerHTML += html;
-    }
+    };
+    updatePagination();
+
 };
 
 render();
+
+// update pagination
+function updatePagination() {
+    let totalPages = Math.ceil(accountList.length / itemsPerPage);
+    pageInfo.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+        let html = "";
+        html = `
+            <span>${i}</span>
+        `;
+        pageInfo.innerHTML += html;
+    }
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
+}
+
+prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        render();
+    }
+});
+
+nextButton.addEventListener('click', () => {
+    let totalPages = Math.ceil(accountList.length / itemsPerPage);
+    if (currentPage < totalPages) {
+        currentPage++;
+        render();
+    }
+});
