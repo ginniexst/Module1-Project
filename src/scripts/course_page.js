@@ -79,9 +79,7 @@ function render() {
                     courseList.push(newCourse);
                     localStorage.setItem("courseList", JSON.stringify(courseList));
                     addFormDiv.style.display = "none";
-                    addForm.courseCode.value = "";
-                    addForm.courseName.value = "";
-                    addForm.courseTime.value = "";
+                    resetInput();
                     render();
                 }
             }
@@ -110,10 +108,10 @@ let editFromDiv = document.getElementById("editFormDiv");
 let editSpan = document.getElementById("editSpan");
 let closeEdit = document.getElementById("closeEdit");
 
-closeEdit.onclick = function() {
+closeEdit.onclick = function () {
     editFormDiv.style.display = "none";
 };
-editSpan.onclick = function() {
+editSpan.onclick = function () {
     editFormDiv.style.display = "none";
 }
 
@@ -122,9 +120,17 @@ let delFormDiv = document.getElementById("delFormDiv");
 let delSpan = document.getElementById("delSpan");
 let noBtn = document.getElementById("noBtn");
 
-delSpan.onclick = function() {
+delSpan.onclick = function () {
     delFormDiv.style.display = "none";
 };
-noBtn.onclick = function() {
+noBtn.onclick = function () {
     delFormDiv.style.display = "none";
+};
+
+// Xoá giá trị ô input
+function resetInput() {
+    var elements = document.getElementsByTagName("input");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].value = "";
+    }
 };

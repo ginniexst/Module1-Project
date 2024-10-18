@@ -80,11 +80,7 @@ function render() {
                     }
                     classList.push(newClass);
                     localStorage.setItem("classList", JSON.stringify(classList));
-                    addForm.classCode.value = "";
-                    addForm.className.value = "";
-                    addForm.classTeacher.value = "";
-                    addForm.classDescription.value = "";
-                    addForm.classNumber.value = "";
+                    resetInput();
                     addFormDiv.style.display = "none";
                     render();
                 }
@@ -130,4 +126,12 @@ delSpan.onclick = function() {
 };
 noBtn.onclick = function() {
     delFormDiv.style.display = "none";
+};
+
+// Xoá giá trị ô input
+function resetInput() {
+    var elements = document.getElementsByTagName("input");
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].value = "";
+    }
 };
