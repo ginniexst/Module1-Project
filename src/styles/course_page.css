@@ -105,6 +105,11 @@ footer {
   background-color: #f8f8f8;
 }
 
+.page-number.active {
+  background-color: #007bff;
+  color: white;
+}
+
 .button {
   border: 1px solid #888;
   padding: 2px 8px;
