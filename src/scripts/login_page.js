@@ -12,7 +12,6 @@ loginBtn.onclick = function () {
     let find = accountList.find(function (element, index) {
         return element.email === email;
     });
-    console.log(find);
     
 
     if (!find) {

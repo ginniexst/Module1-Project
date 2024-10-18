@@ -10,9 +10,21 @@ logoutBtn.onclick = function () {
 let studentList = JSON.parse(localStorage.getItem("studentList"));
 let tbody = document.getElementById("tbody");
 
+// Hiển thị 10 khoá trên 1 trang
+let pageInfo = document.getElementById("page-info");
+let prevButton = document.getElementById("prev");
+let nextButton = document.getElementById("next");
+let itemsPerPage = 10;
+let currentPage = 1;
+
+
 function render() {
     tbody.innerHTML = "";
-    for (let student of studentList) {
+    let startIndex = (currentPage - 1) * itemsPerPage;
+    let endIndex = startIndex + itemsPerPage;
+    let pageData = studentList.slice(startIndex, endIndex);
+
+    for (let student of pageData) {
         let html = "";
         html = `
             <tr>
@@ -25,15 +37,16 @@ function render() {
                 <td>${student.status}</td>
                 <td>${student.class}</td>
                 <td>
-                    <span class="button button-edit">Sửa</span>
+                    <span class="button button-edit" onclick="openEditForm()">Sửa</span>
                 </td>
                 <td>
-                    <span class="button button-delete">Xoá</span>
+                    <span class="button button-delete" onclick="openDelForm()">Xoá</span>
                 </td>
             </tr>
         `;
         tbody.innerHTML += html;
-    }
+    };
+    updatePagination();
 
     // Thêm sinh viên
     addForm.onsubmit = function (event) {
@@ -97,10 +110,72 @@ closeAdd.onclick = function () {
     addFormDiv.style.display = "none";
 };
 
+// Đóng modal cập nhật
+let editFromDiv = document.getElementById("editFormDiv");
+let editSpan = document.getElementById("editSpan");
+let closeEdit = document.getElementById("closeEdit");
+
+closeEdit.onclick = function () {
+    editFormDiv.style.display = "none";
+};
+editSpan.onclick = function () {
+    editFormDiv.style.display = "none";
+}
+
+// Đóng modal xác nhận xóa
+let delFormDiv = document.getElementById("delFormDiv");
+let delSpan = document.getElementById("delSpan");
+let noBtn = document.getElementById("noBtn");
+
+delSpan.onclick = function () {
+    delFormDiv.style.display = "none";
+};
+noBtn.onclick = function () {
+    delFormDiv.style.display = "none";
+};
+
 // Xoá giá trị ô input
 function resetInput() {
-    var elements = document.getElementsByTagName("input");
+    let elements = document.getElementsByTagName("input");
     for (var i = 0; i < elements.length; i++) {
         elements[i].value = "";
     }
 };
+
+// event cho nút sửa/xoá
+function openEditForm() {
+    editFormDiv.style.display = "block";
+};
+function openDelForm() {
+    delFormDiv.style.display = "block";
+};
+
+// update pagination
+function updatePagination() {
+    let totalPages = Math.ceil(studentList.length / itemsPerPage);
+    pageInfo.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+        let html = "";
+        html = `
+            <span>${i}</span>
+        `;
+        pageInfo.innerHTML += html;
+    }
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
+}
+
+prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        render();
+    }
+});
+
+nextButton.addEventListener('click', () => {
+    let totalPages = Math.ceil(studentList.length / itemsPerPage);
+    if (currentPage < totalPages) {
+        currentPage++;
+        render();
+    }
+});

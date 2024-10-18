@@ -10,6 +10,12 @@ let addCourse = document.getElementById("addCourse");
 let addForm = document.getElementById("addForm");
 let delCourse = document.getElementById("delCourse");
 
+// Hiển thị 10 khoá trên 1 trang
+let pageInfo = document.getElementById("page-info");
+let prevButton = document.getElementById("prev");
+let nextButton = document.getElementById("next");
+let itemsPerPage = 10;
+let currentPage = 1;
 
 // Đăng xuất
 logoutBtn.onclick = function () {
@@ -19,7 +25,11 @@ logoutBtn.onclick = function () {
 // Render thông tin
 function render() {
     tbody.innerHTML = "";
-    for (let course of courseList) {
+    let startIndex = (currentPage - 1) * itemsPerPage;
+    let endIndex = startIndex + itemsPerPage;
+    let pageData = courseList.slice(startIndex, endIndex);
+
+    for (let course of pageData) {
         let html = "";
         let status = "";
         if (course.status) {
@@ -35,15 +45,16 @@ function render() {
                 <td>${course.courseTime}</td>
                 <td>${status}</td>
                 <td>
-                    <span class="button button-edit" id="editCourse">Sửa</span>
+                    <span class="button button-edit" onclick="openEditForm()" >Sửa</span>
                 </td>
                 <td>
-                    <span class="button button-delete" id="delCourse">Xoá</span>
+                    <span class="button button-delete" onclick="openDelForm()">Xoá</span>
                 </td>
             </tr>
         `;
         tbody.innerHTML += html;
     };
+    updatePagination();
 
     // Thêm khoá học mới
     addForm.onsubmit = function (event) {
@@ -86,19 +97,19 @@ function render() {
         }
     };
 
-    // Xoá khoá học
 };
 
 render();
 
+// Hiển thị model thêm mới
 addBtn.onclick = function () {
     addFormDiv.style.display = "block";
 };
 
+// Đóng model thêm mới
 span.onclick = function () {
     addFormDiv.style.display = "none";
 };
-
 closeCourse.onclick = function () {
     addFormDiv.style.display = "none";
 };
@@ -111,9 +122,10 @@ let closeEdit = document.getElementById("closeEdit");
 closeEdit.onclick = function () {
     editFormDiv.style.display = "none";
 };
+
 editSpan.onclick = function () {
     editFormDiv.style.display = "none";
-}
+};
 
 // Đóng modal xác nhận xóa
 let delFormDiv = document.getElementById("delFormDiv");
@@ -129,8 +141,46 @@ noBtn.onclick = function () {
 
 // Xoá giá trị ô input
 function resetInput() {
-    var elements = document.getElementsByTagName("input");
+    let elements = document.getElementsByTagName("input");
     for (var i = 0; i < elements.length; i++) {
         elements[i].value = "";
     }
 };
+
+// event cho nút sửa/xoá
+function openEditForm() {
+    editFormDiv.style.display = "block";
+}
+function openDelForm() {
+    delFormDiv.style.display = "block";
+}
+
+// Update pagination
+function updatePagination() {
+    let totalPages = Math.ceil(courseList.length / itemsPerPage);
+    pageInfo.innerHTML = "";
+    for (let i = 1; i <= totalPages; i++) {
+        let html = "";
+        html = `
+            <span>${i}</span>
+        `;
+        pageInfo.innerHTML += html;
+    }
+    prevButton.disabled = currentPage === 1;
+    nextButton.disabled = currentPage === totalPages;
+}
+
+prevButton.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        render();
+    }
+});
+
+nextButton.addEventListener('click', () => {
+    let totalPages = Math.ceil(courseList.length / itemsPerPage);
+    if (currentPage < totalPages) {
+        currentPage++;
+        render();
+    }
+});
