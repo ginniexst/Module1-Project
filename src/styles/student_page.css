@@ -98,20 +98,16 @@ footer {
   margin-top: 10px;
 }
 
-.pagination a {
-  color: black;
-  float: left;
-  padding: 8px 16px;
-  text-decoration: none;
+.page-number {
+  padding: 5px 10px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  background-color: #f8f8f8;
 }
 
-.pagination a.pag-active {
-  background-color: orange;
-  color: black;
-}
-
-.pagination a:hover:not(.pag-active) {
-  background-color: #ddd;
+.page-number.active {
+  background-color: #007bff;
+  color: white;
 }
 
 .button {
@@ -176,14 +172,14 @@ footer {
 
 .modal-content {
   background-color: #fefefe;
-  margin: 10% auto;
+  margin: 5% auto;
   width: 80%;
 }
 
 .modal p {
   display: flex;
   justify-content: space-between;
-  margin-top: 20px;
+  /* margin-top: 20px; */
 }
 
 .bold {
@@ -220,7 +216,7 @@ footer {
 
 .gender {
   display: flex;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   align-items: center;
   gap: 20%;
 }

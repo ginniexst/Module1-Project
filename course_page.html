@@ -53,8 +53,8 @@
         <div class="search-menu">
           <button class="add-btn" id="addBtn">Thêm mới</button>
           <div>
-            <input type="text" class="search-bar" placeholder="Nhập khoá học cần tìm kiếm" />
-            <button class="search-btn">Tìm kiếm</button>
+            <input type="text" class="search-bar" id="search-bar" placeholder="Nhập khoá học cần tìm kiếm" />
+            <button class="search-btn" id="searchButton">Tìm kiếm</button>
           </div>
           <label class="sort">Sắp xếp
             <select name="sort">
@@ -79,14 +79,9 @@
           <tbody id="tbody"></tbody>
         </table>
 
-        <div class="pagination">
-          <button id="prev">Prev</button>
-          <div id="page-info">
-            
-          </div>
-          <button id="next">Next</button>
+        <div class="pagination" id="pagination">
         </div>
-      </div>
+        </div>
 
       <!-- Form thêm mới khóa học -->
       <div class="modal overlay" id="addFormDiv">
