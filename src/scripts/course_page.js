@@ -85,7 +85,7 @@ function render() {
             courseTime: addForm.courseTime.value,
             status: stt,
           };
-          courseList.push(newCourse);
+          courseList.unshift(newCourse);
           localStorage.setItem("courseList", JSON.stringify(courseList));
           addFormDiv.style.display = "none";
           resetInput();
@@ -98,12 +98,12 @@ function render() {
 
 render();
 
-// Hiển thị model thêm mới
+// Hiển thị modal thêm mới
 addBtn.onclick = function () {
   addFormDiv.style.display = "block";
 };
 
-// Đóng model thêm mới
+// Đóng modal thêm mới
 span.onclick = function () {
   addFormDiv.style.display = "none";
 };

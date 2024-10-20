@@ -20,7 +20,6 @@ loginBtn.onclick = function () {
         if (find.password !== password) {
             alert("Mật khẩu không đúng");
         } else {
-            alert("Đăng nhập thành công");
             let loginInfo = { id: email, password: password };
             localStorage.setItem("loginInfo",JSON.stringify(loginInfo));
             location.href = "http://127.0.0.1:5500/home_page.html"
